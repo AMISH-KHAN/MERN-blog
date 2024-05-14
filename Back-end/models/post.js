@@ -6,9 +6,16 @@ const { Schema } = mongoose
 const postSchema = new Schema({
     title: String,
     body: String,
-    author: String,
     date: { type: Date, default: Date.now },
-    pic: { type: String, default: "" }
+    pic: { type: String, default: "" },
+    user: {
+        
+        name: {
+            type: String,
+            required:[true,"user must provide name"]
+        },
+        pic:String
+    }
 })
 
 // making model out of the schema
